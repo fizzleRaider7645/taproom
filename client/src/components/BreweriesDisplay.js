@@ -6,9 +6,8 @@ const BreweriesDisplay = (props) => {
 const breweries = props.breweries.map((brewery) => {
     return <li onClick={props.fetchBreweryById} 
                 key={brewery.id} 
-                value={brewery.id}>Name: {brewery.name} - 
-                Type: {brewery.brewery_type.charAt(0).toUpperCase() + 
-                brewery.brewery_type.slice(1) }</li>
+                value={brewery.id}
+                >{brewery.name}</li>
 })
     return (
         <ul>
