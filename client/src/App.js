@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './components/SearchForm';
-import Display from './components/Display';
+import BreweriesDisplay from './components/BreweriesDisplay';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      searchComplete: false,
-      results: {}
+      receivedIndexResults: false,
+      receivedShowResults: true,
+      indexResults: {},
+      showResult: {},
     }
   }
   
@@ -17,16 +19,26 @@ class App extends Component {
     fetch(`https://api.openbrewerydb.org/breweries?by_city=${name}`)
       .then(res => res.json())
       .then(json => this.setState({
-        searchComplete: true,
+        indexResults: true,
         results: json
       }));
-  }  
+  }
+  
+  fetchBreweryById = (e) => {
+    fetch(`https://api.openbrewerydb.org/breweries/${e.target.value}`)
+      .then(res => res.json())
+      .then(json => this.setState({
+        receivedShowResults: true,
+        results: json
+      }));
+  } 
+
   render() {
 
     return (
       <div className="App">
         <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
-        {this.state.searchComplete ? <Display breweries={this.state.results} /> : ""}
+        {this.state.receivedIndexResults ? <BreweriesDisplay breweries={this.state.results} fetchBreweryById={this.fetchBreweryById}/> : ""}
       </div>
     );
   }
