@@ -4,12 +4,11 @@ import '../App.css'
 
 const BreweryDisplay = (props) => {
     const brewery = props.brewery
-    console.log(brewery)
-    // const longitude = props.longitude
-    // const latitude = props.latitude
+    const longitude = props.brewery.longitude
+    const latitude = props.brewery.latitude
     const zip = brewery.postal_code.split("-")[0]
     const type = brewery.brewery_type.slice(0,1).toUpperCase() + brewery.brewery_type.slice(1)
-    
+    console.log(brewery)
     const handleSave = (e) => {
         fetch(`http://localhost:3000/breweries`, {
             method: 'POST',
@@ -28,7 +27,7 @@ const BreweryDisplay = (props) => {
             <p>{brewery.city}, {brewery.state}</p>
             <p>{brewery.street}</p>
             <p>{zip}</p>
-            <p><Map /></p>
+            <Map latitude={latitude} longitude={longitude}/>
             <p onClick={handleSave} id="save" 
                 value={brewery.id}>Add to Community Favorites</p>
         </div>
