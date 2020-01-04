@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_03_163557) do
+ActiveRecord::Schema.define(version: 2020_01_04_170021) do
 
   create_table "breweries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "openbrewerydb_id"
+    t.string "brewery_type"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.string "country"
+    t.string "longitude"
+    t.string "latitude"
+    t.string "phone"
+    t.string "website_url"
   end
 
 end
