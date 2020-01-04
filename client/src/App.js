@@ -3,6 +3,7 @@ import SearchForm from './components/SearchForm';
 import BreweriesDisplay from './components/BreweriesDisplay';
 import BreweryDisplay from './components/BreweryDisplay';
 import './App.css';
+require('dotenv').config()
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,13 @@ class App extends Component {
       showResult: {},
     }
   }
+
+  componentDidMount() {
+    const API_KEY = process.env.REACT_APP_GOOGLE_MAP_API_KEY
+    const script = document.querySelector('#google-script'); 
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`; 
+    document.head.append(script);
+}
 
   fetchFavorites = () => {
     fetch(`http://localhost:3000/breweries`)
