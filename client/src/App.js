@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       receivedIndexResults: false,
       receivedShowResults: false,
-      indexResults: {},
+      indexResults: {city:"", breweries: {}},
       showResult: {},
     }
   }
@@ -21,8 +21,10 @@ class App extends Component {
       .then(res => res.json())
       .then(json => this.setState({
         receivedIndexResults: true,
-        indexResults: json
-      }));
+        indexResults: {...this.indexResults, breweries: json, city: name},
+        showResult: {},
+        receivedShowResults: false
+      })).catch(err => console.log(err));
   }
   
   fetchBreweryById = (e) => {
@@ -31,21 +33,26 @@ class App extends Component {
       .then(json => this.setState({
         receivedShowResults: true,
         showResult: json
-      }));
+      })).catch(err => console.log(err));
   } 
 
   render() {
 
     return (
       <div className="App">
+        
         <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
+        
         {this.state.receivedIndexResults ? 
+          
           <BreweriesDisplay 
-            breweries={this.state.indexResults} 
+            breweries={this.state.indexResults.breweries} 
             fetchBreweryById={this.fetchBreweryById}/> : ""}
         
         {this.state.receivedShowResults ? 
+          
           <BreweryDisplay brewery={this.state.showResult}/> : ""}
+      
       </div>
     );
   }

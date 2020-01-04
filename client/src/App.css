@@ -2,5 +2,18 @@
   text-align: center;
 }
 
+#brewery-display {
+  height: 100%;
+  border: solid;
+  border-color: chartreuse;
+}
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
 

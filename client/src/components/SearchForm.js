@@ -9,13 +9,15 @@ const SearchForm = (props) => {
         props.fetchBreweriesByCity(city)
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input onChange={ (e) => setCity(e.target.value) } type="text" 
-                            placeholder="Enter City Name" value={city}></input>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+
+        <form onSubmit={handleSubmit}>
+            <input onChange={ (e) => setCity(e.target.value) } 
+                type="text" 
+                placeholder="Enter City Name" 
+                value={city}></input>
+            <button type="submit">Submit</button>
+        </form>
+
     )
 }
 
