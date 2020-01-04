@@ -14,6 +14,17 @@ class App extends Component {
       showResult: {},
     }
   }
+
+  fetchFavorites = () => {
+    fetch(`http://localhost:3000/breweries`)
+      .then(res => res.json())
+      .then(json => this.setState({
+        receivedIndexResults: true,
+        indexResults: {...this.indexResults, breweries: json},
+        showResult: {},
+        receivedShowResults: false
+      }))
+  }
   
   
   fetchBreweriesByCity = (name) => {
@@ -40,11 +51,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        
         <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
+        <p onClick={this.fetchFavorites}>See Community Favorites</p>
         
         {this.state.receivedIndexResults ? 
-          
+        
           <BreweriesDisplay 
             breweries={this.state.indexResults.breweries} 
             fetchBreweryById={this.fetchBreweryById}/> : ""}

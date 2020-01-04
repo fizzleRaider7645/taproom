@@ -6,7 +6,9 @@ const BreweriesDisplay = (props) => {
     const breweries = props.breweries.map((brewery) => {
         return <li onClick={props.fetchBreweryById} 
                     key={brewery.id} 
-                    value={brewery.id}>{brewery.name}</li>
+                    value={brewery.openbrewerydb_id ? brewery.openbrewerydb_id : brewery.id}>
+                    {brewery.name}
+                </li>
     })
     return (
         <ul>

@@ -4,8 +4,8 @@ import '../App.css'
 const BreweryDisplay = (props) => {
     const brewery = props.brewery
     console.log(brewery)
-    const longitude = props.longitude
-    const latitude = props.latitude
+    // const longitude = props.longitude
+    // const latitude = props.latitude
     const zip = brewery.postal_code.split("-")[0]
     const type = brewery.brewery_type.slice(0,1).toUpperCase() + brewery.brewery_type.slice(1)
     
