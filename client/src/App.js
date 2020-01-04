@@ -51,17 +51,18 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1>{this.state.indexResults.city === "" ? "" : this.state.indexResults.city}</h1>
+        
         <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
+        
         <p onClick={this.fetchFavorites}>See Community Favorites</p>
         
         {this.state.receivedIndexResults ? 
-        
           <BreweriesDisplay 
             breweries={this.state.indexResults.breweries} 
             fetchBreweryById={this.fetchBreweryById}/> : ""}
         
         {this.state.receivedShowResults ? 
-          
           <BreweryDisplay brewery={this.state.showResult}/> : ""}
       
       </div>

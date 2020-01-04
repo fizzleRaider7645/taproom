@@ -1,17 +1,23 @@
-import React from 'react'
-import { GoogleMapReact, withScriptjs, withGoogleMap } from 'google-map-react'; 
+import React, { Component } from 'react';
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
-const Map = (props) => {
-    return (
-        <div>
-            <GoogleMapReact 
-                defaultZoom={10}
-                defaultCenter={{lng: props.longitude, lat: props.latitude}}
-                />
-        </div>
-    )
-}
-
-const Wrapper = withScriptjs(withGoogleMap(Map));
-
-export default Map
+class Map extends Component {
+   render() {
+   const ReactGoogleMap = withGoogleMap(props => (
+      <GoogleMap
+        defaultCenter = { { lat: 40.756795, lng: -73.954298 } }
+        defaultZoom = { 13 }
+      >
+      </GoogleMap>
+   ));
+   return(
+      <div>
+        <ReactGoogleMap
+          containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+          mapElement={ <div style={{ height: `100%` }} /> }
+        />
+      </div>
+   );
+   }
+};
+export default Map;

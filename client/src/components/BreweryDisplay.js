@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Map from './Map';
 import '../App.css'
 
 const BreweryDisplay = (props) => {
@@ -27,7 +28,9 @@ const BreweryDisplay = (props) => {
             <p>{brewery.city}, {brewery.state}</p>
             <p>{brewery.street}</p>
             <p>{zip}</p>
-    <p onClick={handleSave} id="save" value={brewery.id}>Add to Community Favorites</p>
+            <p><Map /></p>
+            <p onClick={handleSave} id="save" 
+                value={brewery.id}>Add to Community Favorites</p>
         </div>
     )
 }

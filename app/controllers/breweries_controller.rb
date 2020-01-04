@@ -3,12 +3,10 @@ class BreweriesController < ApplicationController
         @breweries = Brewery.all
         render json: @breweries
     end
-
-    def show
-    end
-
+    
     def create
         @brewery = Brewery.find_by(openbrewerydb_id: params[:brewery][:id])
+        
         if @brewery
             render json: @brewery
         else
@@ -17,6 +15,7 @@ class BreweriesController < ApplicationController
             @brewery.save
             render json: @brewery
         end
+
     end
 
 
