@@ -5,3 +5,13 @@ input {
 input:focus::placeholder {
   color: transparent;
 }
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+#brewery-display a {
+  text-decoration: none;
+  color: black;
+}

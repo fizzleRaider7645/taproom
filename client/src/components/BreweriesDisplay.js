@@ -12,7 +12,8 @@ const BreweriesDisplay = (props) => {
     })
     return (
         <ul>
-            {breweries}
+            <h2>{props.city}</h2>
+                {breweries}
         </ul>
     )
 } 

@@ -21,14 +21,18 @@ const BreweryDisplay = (props) => {
     }
     return (
         <div>
-            <h2 id="brewery-display"><a href={brewery.website_url} target="_blank" 
-                rel="noopener noreferrer">{brewery.name}</a></h2>
+            <h2 id="brewery-display">
+                <a href={brewery.website_url} 
+                data-toggle="tooltip" 
+                title="Go to Brewery!" target="_blank" 
+                rel="noopener noreferrer">{brewery.name}</a>
+                </h2>
             
             <p>Type: {type}</p>
             <p>{brewery.city}, {brewery.state}</p>
             <p>{brewery.street}</p>
             <p>{zip}</p>
-            <Map latitude={latitude} longitude={longitude}/>
+            {/* <Map latitude={latitude} longitude={longitude}/> */}
             <p onClick={handleSave} id="save" 
                 value={brewery.id}>Add to Community Favorites</p>
         </div>

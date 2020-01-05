@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import SearchForm from './components/SearchForm';
 import BreweriesDisplay from './components/BreweriesDisplay';
 import BreweryDisplay from './components/BreweryDisplay';
-import mug from './images/mug-main.png'
+import Map from './components/Map';
+import mug from './images/mug-main.png';
 import './App.css';
 require('dotenv').config()
 
@@ -59,22 +60,38 @@ class App extends Component {
   render() {
 
     return (
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <header>
+          HI
+        </header>
+        <div className="row">
           
-          <div class="col-4" align="center">
+          <div className="col-4" align="center">
             <img src={mug} alt="Logo"></img>
             <h3>CityTap</h3>
-            <h2>{this.state.indexResults.city  ? this.state.indexResults.city : ""}</h2>
             <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
           </div>
           
-          <div class="col-8">Breweries Index</div>
+          <div className="col-8" align="center">
+            {this.state.receivedIndexResults ? 
+              <BreweriesDisplay
+                city={this.state.indexResults.city ? 
+                  this.state.indexResults.city : ""} 
+                breweries={this.state.indexResults.breweries} 
+                fetchBreweryById={this.fetchBreweryById}/> : ""}
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-7">Brewery Show</div>
-          <div class="col-5">Google Maps</div>
+        <div className="row">
+          <div className="col-6">
+            {this.state.receivedShowResults ? 
+              <BreweryDisplay brewery={this.state.showResult}/> : ""}
+            </div>
+          <div className="col-6">
+            {this.state.receivedShowResults ?
+              <Map latitude={this.state.showResult.latitude} 
+                   longitude={this.state.showResult.longitude}/> : ""}
+          </div>
         </div>
       </div>
     );
