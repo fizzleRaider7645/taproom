@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchForm from './components/SearchForm';
 import BreweriesDisplay from './components/BreweriesDisplay';
 import BreweryDisplay from './components/BreweryDisplay';
+import mug from './images/mug-main.png'
 import './App.css';
 require('dotenv').config()
 
@@ -18,7 +19,7 @@ class App extends Component {
 
   componentDidMount() {
     const API_KEY = process.env.REACT_APP_GOOGLE_MAP_API_KEY
-    const script = document.querySelector('#google-script'); 
+    const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`; 
     document.head.append(script);
 }
@@ -59,6 +60,10 @@ class App extends Component {
 
     return (
       <div className="App">
+        <header>
+          <h3>CityTap</h3><img alt="mug-logo" src={mug}></img>
+        </header>
+
         <h1>{this.state.indexResults.city === "" ? "" : this.state.indexResults.city}</h1>
         
         <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
