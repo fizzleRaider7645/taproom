@@ -11,9 +11,9 @@ const BreweriesDisplay = (props) => {
                 </li>
     })
     return (
-        <ul>
-            <h2>{props.city}</h2>
-                {breweries}
+        <ul id="breweries-ul">
+            <h2>{props.city ? props.city : "Community Favorites"}</h2>
+            {breweries}
         </ul>
     )
 } 

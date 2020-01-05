@@ -1,11 +1,8 @@
 import React from 'react';
-import Map from './Map';
 import '../App.css'
 
 const BreweryDisplay = (props) => {
     const brewery = props.brewery
-    const longitude = props.brewery.longitude
-    const latitude = props.brewery.latitude
     const zip = brewery.postal_code.split("-")[0]
     const type = brewery.brewery_type.slice(0,1).toUpperCase() + brewery.brewery_type.slice(1)
     console.log(brewery)
@@ -20,9 +17,9 @@ const BreweryDisplay = (props) => {
           .catch(err => console.log(err))
     }
     return (
-        <div>
-            <h2 id="brewery-display">
-                <a href={brewery.website_url} 
+        <div id="brewery-display">
+            <h2>
+                <a id="brewery-a-tag" href={brewery.website_url} 
                 data-toggle="tooltip" 
                 title="Go to Brewery!" target="_blank" 
                 rel="noopener noreferrer">{brewery.name}</a>
@@ -32,7 +29,6 @@ const BreweryDisplay = (props) => {
             <p>{brewery.city}, {brewery.state}</p>
             <p>{brewery.street}</p>
             <p>{zip}</p>
-            {/* <Map latitude={latitude} longitude={longitude}/> */}
             <p onClick={handleSave} id="save" 
                 value={brewery.id}>Add to Community Favorites</p>
         </div>

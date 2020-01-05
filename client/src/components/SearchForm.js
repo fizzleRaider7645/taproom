@@ -6,8 +6,13 @@ const SearchForm = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.fetchBreweriesByCity(city)
-        setCity("")
+        if(e.target[0].value === "") {
+            alert('Must Enter a City')
+            return
+        } else {
+            props.fetchBreweriesByCity(city)
+            setCity("")
+        }
     }
     return (
 

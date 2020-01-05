@@ -1,17 +1,69 @@
+body {
+  text-align: center;
+  background-color: #febf10;
+  font-family: 'Permanent Marker', cursive;
+}
+
 input {
+  font-family: 'Permanent Marker', cursive;
   text-align: center
 }
 
 input:focus::placeholder {
+  font-family: 'Segoe UI';
   color: transparent;
 }
 
+
 ul {
   list-style: none;
-  text-align: center;
+  margin-top: 8%;
+  margin-left: 4%;
+}
+
+li:hover {
+  color: white;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
 }
 
 #brewery-display a {
   text-decoration: none;
   color: black;
+}
+
+#brewery-a-tag:hover {
+  color: white;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+}
+
+#save:hover {
+  color: white;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+}
+
+.logo-div {
+  margin-top: 30%;
+  margin-left: 18%;
+}
+
+#brewery-display {
+  margin-top: 32%;
+}
+
+#community-fav-p:hover {
+  color: white;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+}
+
+form {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }

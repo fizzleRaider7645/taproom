@@ -16,12 +16,12 @@ const Map = (props) => {
       </GoogleMap>
    ));
    return(
-      <React.Fragment>
+      <div id="google-map-div">
         <ReactGoogleMap
-          containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+          containerElement={ <div style={{ marginLeft:'1%',marginBottom: '15%', height: `500px`, width: '500px', border: 'solid', borderStyle: 'solid' }} /> }
           mapElement={ <div style={{ height: `100%` }} /> }
         />
-      </React.Fragment>
+      </div>
    );
 };
 export default Map;

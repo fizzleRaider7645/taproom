@@ -61,18 +61,19 @@ class App extends Component {
 
     return (
       <div className="container">
-        <header>
-          HI
-        </header>
         <div className="row">
           
-          <div className="col-4" align="center">
+          <div className="col-5" align="center">
+            <div className="logo-div">
             <img src={mug} alt="Logo"></img>
             <h3>CityTap</h3>
+            <sub>Search and Enjoy...</sub>
             <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
+            <p id="community-fav-p" onClick={this.fetchFavorites}>See Community Favorites</p>
+            </div>
           </div>
           
-          <div className="col-8" align="center">
+          <div className="col-7" align="center">
             {this.state.receivedIndexResults ? 
               <BreweriesDisplay
                 city={this.state.indexResults.city ? 
@@ -83,10 +84,12 @@ class App extends Component {
         </div>
 
         <div className="row">
+          
           <div className="col-6">
             {this.state.receivedShowResults ? 
               <BreweryDisplay brewery={this.state.showResult}/> : ""}
             </div>
+
           <div className="col-6">
             {this.state.receivedShowResults ?
               <Map latitude={this.state.showResult.latitude} 
