@@ -61,14 +61,18 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h3>CityTap</h3><img alt="mug-logo" src={mug}></img>
+          <h3>CityTap</h3>
+          <h2>{this.state.indexResults.city  ? this.state.indexResults.city : ""}</h2>
+          {/* <sub>Search, Drink, Yay!</sub> */}
+          <img alt="mug-logo" src={mug}></img>
+          <p onClick={this.fetchFavorites}>See Community Favorites</p>
         </header>
 
-        <h1>{this.state.indexResults.city === "" ? "" : this.state.indexResults.city}</h1>
+        {/* <h1>{this.state.indexResults.city === "" ? "" : this.state.indexResults.city}</h1> */}
         
         <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
         
-        <p onClick={this.fetchFavorites}>See Community Favorites</p>
+        {/* <p onClick={this.fetchFavorites}>See Community Favorites</p> */}
         
         {this.state.receivedIndexResults ? 
           <BreweriesDisplay 

@@ -17,7 +17,6 @@ const BreweryDisplay = (props) => {
               },
               body: JSON.stringify({brewery: brewery})
         }).then(res => res.json())
-          .then(res => console.log(res))
           .catch(err => console.log(err))
     }
     return (

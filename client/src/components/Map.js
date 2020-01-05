@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 import mug from '../images/mug.png';
 
-class Map extends Component {
-    constructor(props) {
-        super(props)
-    }
+const Map = (props) => {
 
-   render() {
-    const latitude = parseFloat(this.props.latitude)
-    const longitude = parseFloat(this.props.longitude)
+    const latitude = parseFloat(props.latitude)
+    const longitude = parseFloat(props.longitude)
 
     const ReactGoogleMap = withGoogleMap(() => (
       <GoogleMap
@@ -27,6 +23,5 @@ class Map extends Component {
         />
       </React.Fragment>
    );
-   }
 };
 export default Map;
