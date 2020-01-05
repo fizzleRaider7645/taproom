@@ -21,7 +21,9 @@ const BreweryDisplay = (props) => {
     }
     return (
         <div>
-            <h2 id="brewery-display"><a href={brewery.website_url} target="_blank">{brewery.name}</a></h2>
+            <h2 id="brewery-display"><a href={brewery.website_url} target="_blank" 
+                rel="noopener noreferrer">{brewery.name}</a></h2>
+            
             <p>Type: {type}</p>
             <p>{brewery.city}, {brewery.state}</p>
             <p>{brewery.street}</p>

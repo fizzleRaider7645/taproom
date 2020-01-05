@@ -59,29 +59,23 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <header>
-          <h3>CityTap</h3>
-          <h2>{this.state.indexResults.city  ? this.state.indexResults.city : ""}</h2>
-          {/* <sub>Search, Drink, Yay!</sub> */}
-          <img alt="mug-logo" src={mug}></img>
-          <p onClick={this.fetchFavorites}>See Community Favorites</p>
-        </header>
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-4" align="center">
+            <img src={mug} alt="Logo"></img>
+            <h3>CityTap</h3>
+            <h2>{this.state.indexResults.city  ? this.state.indexResults.city : ""}</h2>
+            <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
+          </div>
+          
+          <div class="col-8">Breweries Index</div>
+        </div>
 
-        {/* <h1>{this.state.indexResults.city === "" ? "" : this.state.indexResults.city}</h1> */}
-        
-        <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
-        
-        {/* <p onClick={this.fetchFavorites}>See Community Favorites</p> */}
-        
-        {this.state.receivedIndexResults ? 
-          <BreweriesDisplay 
-            breweries={this.state.indexResults.breweries} 
-            fetchBreweryById={this.fetchBreweryById}/> : ""}
-        
-        {this.state.receivedShowResults ? 
-          <BreweryDisplay brewery={this.state.showResult}/> : ""}
-      
+        <div class="row">
+          <div class="col-7">Brewery Show</div>
+          <div class="col-5">Google Maps</div>
+        </div>
       </div>
     );
   }
