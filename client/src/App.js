@@ -61,7 +61,22 @@ class App extends Component {
         receivedShowResults: true,
         showResult: json
       })).catch(err => console.log(err));
-  } 
+  }
+
+  voteClick = (e) => {
+    const breweryId = e.target.id
+    const voteType = e.target.className
+        fetch(`http://localhost:3000/breweries/${breweryId}`, {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          method: 'PATCH',                                                              
+          body: JSON.stringify( { breweryId: breweryId, voteType: voteType } )                                        
+    })
+    
+  }
+  
 
   render() {
 
@@ -82,6 +97,7 @@ class App extends Component {
           <div className="col-7" align="center">
             {this.state.receivedIndexResults ? 
               <BreweriesDisplay
+                voteClick={this.voteClick}
                 city={this.state.indexResults.city ? 
                   this.state.indexResults.city : ""} 
                 breweries={this.state.indexResults.breweries} 

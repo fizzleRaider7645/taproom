@@ -18,6 +18,17 @@ class BreweriesController < ApplicationController
 
     end
 
+    def update
+        @brewery = Brewery.find_by(id: params[:breweryId])
+        if(params[:voteType] == "up")
+            @brewery.upvote
+        else
+            @brewery.downvote
+        end
+
+        binding.pry
+    end
+
 
     private
 

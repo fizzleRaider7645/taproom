@@ -6,6 +6,7 @@ const BreweryDisplay = (props) => {
     const zip = brewery.postal_code.split("-")[0]
     const type = brewery.brewery_type.slice(0,1).toUpperCase() + brewery.brewery_type.slice(1)
     console.log(brewery)
+    
     const handleSave = (e) => {
         alert('Saved...')
         fetch(`http://localhost:3000/breweries`, {
