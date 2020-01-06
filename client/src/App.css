@@ -74,3 +74,13 @@ form {
   margin-bottom: 5%;
 }
 
+.up-arrow:hover {
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+
+}
+
+.down-arrow:hover {
+  filter: invert(48%) sepia(100%) saturate(3207%) hue-rotate(350deg) brightness(95%) contrast(80%);
+
+}
+
