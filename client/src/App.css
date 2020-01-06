@@ -18,7 +18,7 @@ input:focus::placeholder {
 ul {
   list-style: none;
   margin-top: 8%;
-  margin-left: 4%;
+  margin-left: 14%;
 }
 
 li:hover {
@@ -41,10 +41,16 @@ li:hover {
 }
 
 #save:hover {
-  color: white;
+  color: red;
   font-weight: 700 !important;
   letter-spacing: 3px;
   transition: all 0.3s ease 0s;
+}
+
+#save {
+  background-color: #d6e5e5;
+  border-radius: 60%;
+  display: inline-block;
 }
 
 .logo-div {
@@ -53,7 +59,7 @@ li:hover {
 }
 
 #brewery-display {
-  margin-top: 32%;
+  margin-top: 25%;
 }
 
 #community-fav-p:hover {
@@ -67,3 +73,4 @@ form {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+

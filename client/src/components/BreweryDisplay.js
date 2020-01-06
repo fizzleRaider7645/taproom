@@ -7,6 +7,7 @@ const BreweryDisplay = (props) => {
     const type = brewery.brewery_type.slice(0,1).toUpperCase() + brewery.brewery_type.slice(1)
     console.log(brewery)
     const handleSave = (e) => {
+        alert('Saved...')
         fetch(`http://localhost:3000/breweries`, {
             method: 'POST',
             headers: {
@@ -30,7 +31,7 @@ const BreweryDisplay = (props) => {
             <p>{brewery.street}</p>
             <p>{zip}</p>
             <p onClick={handleSave} id="save" 
-                value={brewery.id}>Add to Community Favorites</p>
+                value={brewery.id}>Add Brewery to Community Favorites</p>
         </div>
     )
 }

@@ -28,12 +28,18 @@ class App extends Component {
   fetchFavorites = () => {
     fetch(`http://localhost:3000/breweries`)
       .then(res => res.json())
-      .then(json => this.setState({
+      .then(json => this.sortFavoritesByRanking(json))
+      .then(sorted => this.setState({
         receivedIndexResults: true,
-        indexResults: {...this.indexResults, breweries: json},
+        indexResults: {...this.indexResults, breweries: sorted},
         showResult: {},
         receivedShowResults: false
       }))
+  }
+
+  sortFavoritesByRanking = (json) => {
+    const sorted = json.sort((a,b) => b.ranking - a.ranking)
+    return sorted
   }
   
   
