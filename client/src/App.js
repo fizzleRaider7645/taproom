@@ -37,7 +37,7 @@ class App extends Component {
       }))
   }
 
-  sortFavoritesByRanking = (json) => {
+  sortFavoritesByRanking = (json) => {   
     const sorted = json.sort((a,b) => b.ranking - a.ranking)
     return sorted
   }
@@ -68,13 +68,18 @@ class App extends Component {
     const voteType = e.target.className
         fetch(`http://localhost:3000/breweries/${breweryId}`, {
           headers: {
-            'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-          method: 'PATCH',                                                              
-          body: JSON.stringify( { breweryId: breweryId, voteType: voteType } )                                        
-    })
-    
+          method: 'PUT',                                                              
+          body: JSON.stringify( { breweryId: breweryId, voteType: voteType } )                                       
+    }).then(res => res.json())
+      .then(json => this.sortFavoritesByRanking(json))
+      .then(sorted => this.setState({
+        receivedIndexResults: true,
+        indexResults: {...this.indexResults, breweries: sorted },
+        showResult: {},
+        receivedShowResults: false
+      })).catch(err => console.log(err));  
   }
   
 

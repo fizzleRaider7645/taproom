@@ -18,7 +18,7 @@ const Map = (props) => {
    return(
       <div id="google-map-div">
         <ReactGoogleMap
-          containerElement={ <div style={{ marginLeft:'6%',marginBottom: '15%', height: `500px`, width: '500px', border: 'solid', borderStyle: 'solid' }} /> }
+          containerElement={ <div style={{ marginLeft:'10%',marginBottom: '15%', height: `500px`, width: '500px', border: 'solid', borderStyle: 'solid' }} /> }
           mapElement={ <div style={{ height: `100%` }} /> }
         />
       </div>

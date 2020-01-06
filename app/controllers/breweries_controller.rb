@@ -22,15 +22,21 @@ class BreweriesController < ApplicationController
         @brewery = Brewery.find_by(id: params[:breweryId])
         if(params[:voteType] == "up")
             @brewery.upvote
+            @breweries = Brewery.all
+            render json: @breweries
         else
             @brewery.downvote
+            @breweries = Brewery.all
+            render json: @breweries
         end
-
-        binding.pry
     end
 
 
     private
+
+    def set_breweries
+        @breweries = Brewery.all
+    end
 
     def brewery_params
         params.require(:brewery).permit(:name, :brewery_type, :street, :city, :state, :postal_code, :country, :longitude, :latitude, :phone, :website_url)
