@@ -40,7 +40,7 @@ input:focus::placeholder {
 
 ul {
   list-style: none;
-  margin-top: 8%;
+  margin-top: 5%;  
   margin-left: 14%;
 }
 
@@ -88,7 +88,7 @@ li:hover {
 }
 
 .logo-div {
-  margin-top: 30%;
+  margin-top: 40%;
   margin-left: 18%;
 }
 
@@ -131,4 +131,10 @@ form {
 #breweries-ul {
   max-height: 400px;
   overflow: auto;
+}
+
+
+#breweries-h1 {
+  margin-left: 21%;
+  margin-top: 5%;
 }

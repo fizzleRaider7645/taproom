@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import SearchForm from './components/SearchForm';
 import BreweriesDisplay from './components/BreweriesDisplay';
 import BreweryDisplay from './components/BreweryDisplay';
@@ -86,7 +87,6 @@ class App extends Component {
       <div className="container">
         <header></header>
         <div className="row">
-          
           <div className="col-5" align="center">
             <div className="logo-div">
             <img src={mug} alt="Logo"></img>
