@@ -70,23 +70,21 @@ class App extends Component {
           headers: {
             'Content-Type': 'application/json'
           },
-          method: 'PUT',                                                              
+          method: 'PATCH',                                                              
           body: JSON.stringify( { breweryId: breweryId, voteType: voteType } )                                       
     }).then(res => res.json())
       .then(json => this.sortFavoritesByRanking(json))
       .then(sorted => this.setState({
         receivedIndexResults: true,
-        indexResults: {...this.indexResults, breweries: sorted },
-        showResult: {},
-        receivedShowResults: false
+        indexResults: {...this.indexResults, breweries: sorted }
       })).catch(err => console.log(err));  
   }
-  
 
   render() {
 
     return (
       <div className="container">
+        <header></header>
         <div className="row">
           
           <div className="col-5" align="center">
@@ -114,7 +112,7 @@ class App extends Component {
           
           <div className="col-6">
             {this.state.receivedShowResults ? 
-              <BreweryDisplay brewery={this.state.showResult}/> : ""}
+              <BreweryDisplay handleSave={this.handleSave} brewery={this.state.showResult}/> : ""}
             </div>
 
           <div className="col-6">

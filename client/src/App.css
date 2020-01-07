@@ -4,6 +4,29 @@ body {
   font-family: 'Permanent Marker', cursive;
 }
 
+header {
+  margin-top: 3%;
+  border-color: black;
+  border: dashed;
+  border-width: 15px;	
+}
+
+#brewery-header {
+  border-color: black;
+  border: dashed;
+  border-width: 15px;	
+}
+
+#brewery-h2 {
+  margin-top: 5%;
+}
+
+/* footer {
+  border-color: black;
+  border: solid;
+  border-width: large;
+} */
+
 input {
   font-family: 'Permanent Marker', cursive;
   text-align: center
@@ -59,7 +82,7 @@ li:hover {
 }
 
 #save {
-  background-color: #d6e5e5;
+  background-color: white;
   border-radius: 60%;
   display: inline-block;
 }
@@ -91,7 +114,7 @@ form {
 }
 
 .down:hover {
-  filter: invert(48%) sepia(100%) saturate(5000%) hue-rotate(360deg) brightness(95%) contrast(80%);
+  filter: invert(48%) sepia(100%) saturate(6000%) hue-rotate(360deg) brightness(95%) contrast(80%);
 
 }
 
@@ -103,4 +126,9 @@ form {
 .up {
   height:30px; 
   width:30px;
+}
+
+#breweries-ul {
+  max-height: 400px;
+  overflow: auto;
 }
