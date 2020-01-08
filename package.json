@@ -2,7 +2,7 @@
   "name": "taproom",
   "version": "1.0.0",
   "engines": {
-    "node" : "6.3.1"
+    "node": "12.13.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
