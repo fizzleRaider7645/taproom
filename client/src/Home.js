@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import mug from './images/mug-main.png';
-// import BreweriesDisplay from './components/BreweriesDisplay';
-
+import App from './App';
 class Home extends Component {
     state = {
+        enter: false,
         localBreweries: []
     }
 
@@ -27,23 +27,19 @@ class Home extends Component {
         const breweries = Object.values(this.state.localBreweries)
         const randomIndex = Math.floor(Math.random() * 10) + 1
         const localBreweryOfTheDay = breweries[randomIndex]
-        console.log(localBreweryOfTheDay)
-
         return (
-            <Router>
-                <div className="container">
-                    <div align="center">
-                        <img id="home-logo" src={mug} alt="Logo"></img>
-                        <h1>CityTap</h1>
-                        <h3 id="home-h3">{`Local Brewery of the Day:`}</h3>
-                    </div>
-
-                    <div>
-                        <h2 id="localBreweryOfTheDay">{localBreweryOfTheDay ? <a href={localBreweryOfTheDay.website_url}>{localBreweryOfTheDay.name}</a> : ""}</h2>
-                    </div>
-                    <h2 class="hover-magic" id="enter-h2">Enter</h2>
+            <div className="home-container">
+                <div align="center">
+                    <img id="home-logo" src={mug} alt="Logo"></img>
+                    <h1>CityTap</h1>
+                    <h3 id="home-h3">{`Local Brewery of the Day:`}</h3>
                 </div>
-          </Router>
+                
+                <div>
+                    <h2 id="localBreweryOfTheDay">{localBreweryOfTheDay ? <a href={localBreweryOfTheDay.website_url}>{localBreweryOfTheDay.name}</a> : ""}</h2>
+                </div>
+                <h2 id="enter-h2"><a id="enter-link" onClick={this.props.handleClick} className="hover-magic">Enter</a></h2>
+            </div>
         )
     }
 }

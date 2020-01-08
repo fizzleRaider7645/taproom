@@ -21,12 +21,6 @@ header {
   margin-top: 5%;
 }
 
-/* footer {
-  border-color: black;
-  border: solid;
-  border-width: large;
-} */
-
 input {
   font-family: 'Permanent Marker', cursive;
   text-align: center
@@ -149,7 +143,7 @@ form {
   transition: all 0.3s ease 0s;
 }
 
-#localBreweryOfTheDay {
+/* #localBreweryOfTheDay {
   margin-right: 1%;
 }
 
@@ -168,3 +162,14 @@ form {
 #enter-h2 {
   margin-top: 20%;
 }
+
+.home-container {
+  border-color: black;
+  border-top: dashed;
+  border-width: 20px;	
+}
+
+#enter-link {
+  text-decoration: none;
+  color: black;
+} */

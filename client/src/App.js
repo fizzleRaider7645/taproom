@@ -23,7 +23,7 @@ class App extends Component {
 
     return (
         <div className="container">
-          
+          <header></header>
           <div className="row">  
             
             <div className="col-5" align="center">
