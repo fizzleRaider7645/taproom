@@ -24,22 +24,12 @@ const BreweriesDisplay = (props) => {
                 </div>
     })
     return (
-<<<<<<< HEAD
-        <div>
-             <h1 id="breweries-h1">{props.city ? props.city : "Community Favorites"}</h1>
-                <ul id="breweries-ul">
-                    {breweries}
-                </ul>
-        </div>
-=======
         <ul id="breweries-ul">
             <h2>{props.city ? props.city : "Community Favorites"}</h2>
             {breweries}
         </ul>
->>>>>>> refactor
     )
 }
 
-// export default BreweriesDisplay
 export default connect(null, { voteClick })(BreweriesDisplay)
 

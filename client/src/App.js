@@ -23,18 +23,6 @@ class App extends Component {
   render() {
 
     return (
-<<<<<<< HEAD
-      <div className="container">
-        <header></header>
-        <div className="row">
-          <div className="col-5" align="center">
-            <div className="logo-div">
-            <img src={mug} alt="Logo"></img>
-            <h3>CityTap</h3>
-            <sub>Search and Enjoy...</sub>
-            <SearchForm fetchBreweriesByCity={this.fetchBreweriesByCity}/>
-            <p id="community-fav-p" onClick={this.fetchFavorites}>See Community Favorites</p>
-=======
       <Router>
         <div className="container">
           
@@ -58,7 +46,6 @@ class App extends Component {
                   fetchBreweryById={this.props.fetchBreweryById}  
                 /> 
               : "" }
->>>>>>> refactor
             </div>
           </div>
 
