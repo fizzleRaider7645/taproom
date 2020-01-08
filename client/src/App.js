@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import SearchForm from './components/SearchForm';
 import BreweriesDisplay from './components/BreweriesDisplay';
 import BreweryDisplay from './components/BreweryDisplay';
