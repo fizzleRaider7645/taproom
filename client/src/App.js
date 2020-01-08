@@ -32,7 +32,7 @@ class App extends Component {
                 <h3>CityTap</h3>
                 <sub>Search and Enjoy...</sub>
                 <SearchForm fetchBreweriesByCity={this.props.fetchBreweriesByCity}/>
-                <p id="community-fav" onClick={this.props.fetchFavorites}>See Community Favorites</p>
+                <p id="community-fav" className="hover-magic" onClick={this.props.fetchFavorites}>See Community Favorites</p>
               </div>
             </div>
 
