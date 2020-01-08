@@ -1,0 +1,25 @@
+{
+  "name": "taproom",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd client && npm install && npm install --save google-map-react && npm run build cd ..",
+    "deploy": "cp -a front-end-app/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client Built!'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizzleRaider7645/taproom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fizzleRaider7645/taproom/issues"
+  },
+  "homepage": "https://github.com/fizzleRaider7645/taproom#readme"
+}
