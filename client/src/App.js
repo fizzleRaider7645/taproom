@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import { fetchBreweriesByCity, fetchBreweryById, fetchFavorites } from './actions/BreweryActions';
 import SearchForm from './components/SearchForm';
 import BreweriesDisplay from './components/BreweriesDisplay';
@@ -17,13 +16,12 @@ class App extends Component {
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`; 
     document.head.append(script);
-}
+  }
 
 
   render() {
 
     return (
-      <Router>
         <div className="container">
           
           <div className="row">  
@@ -34,17 +32,16 @@ class App extends Component {
                 <h3>CityTap</h3>
                 <sub>Search and Enjoy...</sub>
                 <SearchForm fetchBreweriesByCity={this.props.fetchBreweriesByCity}/>
-                <p id="community-fav-p" onClick={this.props.fetchFavorites}>See Community Favorites</p>
+                <p id="community-fav" onClick={this.props.fetchFavorites}>See Community Favorites</p>
               </div>
             </div>
-            
+
             <div className="col-7" align="center">
               {this.props.receivedIndexResults ? 
                 <BreweriesDisplay 
                   breweries={this.props.state.indexResults.breweries}
                   city={this.props.state.indexResults.city ? this.props.state.indexResults.city : ""}
-                  fetchBreweryById={this.props.fetchBreweryById}  
-                /> 
+                  fetchBreweryById={this.props.fetchBreweryById}/> 
               : "" }
             </div>
           </div>
@@ -63,7 +60,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </Router>
     );
   }
 }

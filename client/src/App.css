@@ -75,7 +75,7 @@ li:hover {
 }
 
 #save:hover {
-  color: red;
+  color: #167af6;
   font-weight: 700 !important;
   letter-spacing: 3px;
   transition: all 0.3s ease 0s;
@@ -96,11 +96,15 @@ li:hover {
   margin-top: 25%;
 }
 
-#community-fav-p:hover {
+#community-fav:hover {
   color: white;
   font-weight: 700 !important;
   letter-spacing: 3px;
   transition: all 0.3s ease 0s;
+}
+
+#community-fav {
+  text-decoration: none;
 }
 
 form {
@@ -133,10 +137,34 @@ form {
   overflow: auto;
 }
 
+#breweries-h2 {
+  margin-bottom: 7%;
+}
+
 
 .hover-magic:hover {
   color: white;
   font-weight: 700 !important;
   letter-spacing: 3px;
   transition: all 0.3s ease 0s;
+}
+
+#localBreweryOfTheDay {
+  margin-right: 1%;
+}
+
+#localBreweryOfTheDay a {
+  text-decoration: none;
+}
+
+#home-logo {
+  margin-top: 6%;
+}
+
+#home-h3 {
+  margin-top: 6%;
+}
+
+#enter-h2 {
+  margin-top: 20%;
 }

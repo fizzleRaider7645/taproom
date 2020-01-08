@@ -7,7 +7,7 @@ export const fetchBreweriesByCity = (name) => {
             .then(res => res.json())
             .then(json => dispatch({
                 type: types.GET_BREWERIES_BY_CITY, payload: {city: name, breweries: json }
-            }));
+        }));
     }
 
 }
@@ -33,10 +33,10 @@ export const fetchFavorites = () => {
     }
   }
 
-  const sortFavoritesByRanking = (json) => {   
+const sortFavoritesByRanking = (json) => {   
     const sorted = json.sort((a,b) => b.ranking - a.ranking)
     return sorted
-  }
+}
   
 export const voteClick = (e) => {
     const breweryId = e.target.id
