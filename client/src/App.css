@@ -134,7 +134,15 @@ form {
 }
 
 
+<<<<<<< HEAD
 #breweries-h1 {
   margin-left: 21%;
   margin-top: 5%;
+=======
+.hover-magic:hover {
+  color: white;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+>>>>>>> refactor
 }
