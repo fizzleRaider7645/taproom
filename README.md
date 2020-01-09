@@ -1,24 +1,27 @@
-# README
+# CityTap
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application allows users to search for breweries by city, add breweries to commmunity favorites, and upvote/downvote breweries in community favorites.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Clone repo "https://github.com/fizzleRaider7645/taproom"
 
-* System dependencies
+cd into the file's location
 
-* Configuration
+run the following: `bundle install && cd client && npm install && npm install --save google-map-react && cd ..`
 
-* Database creation
+Finally, run `rake db:migrate` then `rake db:seed`
 
-* Database initialization
+To start the servers run `rake start`
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/taproom. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Deployment instructions
+## License
 
-* ...
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the CityTap project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/fantasy_basketball/blob/master/CODE_OF_CONDUCT.md).

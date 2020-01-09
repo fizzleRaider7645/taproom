@@ -24,7 +24,7 @@ export const fetchBreweryById = (e) => {
 
 export const fetchFavorites = () => {
     return dispatch => {
-        fetch(`${RAILS_API_URL}/breweries`)
+        fetch(`http://localhost:3000/breweries`)
         .then(res => res.json())
         .then(json => sortFavoritesByRanking(json))
         .then(sorted => dispatch({
