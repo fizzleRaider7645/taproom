@@ -42,7 +42,7 @@ export const voteClick = (e) => {
     const breweryId = e.target.id
     const voteType = e.target.className
     return dispatch => {
-            fetch(`${RAILS_API_URL}/breweries/${breweryId}`, {
+            fetch(`http://localhost:3000//breweries/${breweryId}`, {
               headers: {
                 'Content-Type': 'application/json'
               },
