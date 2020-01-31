@@ -12,11 +12,11 @@ const BreweriesDisplay = (props) => {
                     value={brewery.openbrewerydb_id ? brewery.openbrewerydb_id : brewery.id}>
                     {brewery.name}
                     </li>
-                        <span>{!props.city ? <img onClick={props.voteClick} 
+                        <span>{!props.city ? <img alt="upVote" onClick={props.voteClick} 
                                            id={brewery.id} 
                                            className="up" 
                                            src={upArrow}></img> : ""}
-                              {!props.city ? <img onClick={props.voteClick} 
+                              {!props.city ? <img alt="downVote" onClick={props.voteClick} 
                                             id={brewery.id} 
                                             className="down" 
                                             src={downArrow}></img> : ""}
